@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Kitten!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+            transition: transform 0.3s ease;
+        }
+        h1:hover {
+            transform: scale(1.05);
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .kitten {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            padding: 20px;
+            width: calc(33% - 20px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kitten:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .kitten img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: opacity 0.3s ease;
+        }
+        .kitten:hover img {
+            opacity: 0.8;
+        }
+        .editable:hover {
+            background-color: #f0f0f0;
+            cursor: text;
+        }
+        .contact {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .contact:hover {
+            transform: scale(1.02);
+        }
+        @media (max-width: 768px) {
+            .kitten {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .kitten {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="editable">Adopt a Kitten!</h1>
+    </header>
+    
+    <p class="editable">We have adorable kittens looking for their forever homes. If you're interested in adopting, please contact us!</p>
+    
+    <div class="container">
+        <div class="kitten">
+            <h2 class="editable">Whiskers</h2>
+            <img src="/api/placeholder/400/300" alt="Placeholder image 1 for Whiskers">
+            <img src="/api/placeholder/400/300" alt="Placeholder image 2 for Whiskers">
+            <p class="editable">Whiskers is a playful 8-week-old tabby who loves cuddles and chasing toys.</p>
+        </div>
+        
+        <div class="kitten">
+            <h2 class="editable">Mittens</h2>
+            <img src="/api/placeholder/400/300" alt="Placeholder image 1 for Mittens">
+            <img src="/api/placeholder/400/300" alt="Placeholder image 2 for Mittens">
+            <p class="editable">Mittens is a sweet 10-week-old calico with adorable white paws.</p>
+        </div>
+        
+        <div class="kitten">
+            <h2 class="editable">Socks</h2>
+            <img src="/api/placeholder/400/300" alt="Placeholder image 1 for Socks">
+            <img src="/api/placeholder/400/300" alt="Placeholder image 2 for Socks">
+            <p class="editable">Socks is an energetic 9-week-old tuxedo kitten who loves to play.</p>
+        </div>
+        
+        <div class="kitten">
+            <h2 class="editable">Luna</h2>
+            <img src="/api/placeholder/400/300" alt="Placeholder image 1 for Luna">
+            <img src="/api/placeholder/400/300" alt="Placeholder image 2 for Luna">
+            <p class="editable">Luna is a gentle 11-week-old black kitten who enjoys napping in sunny spots.</p>
+        </div>
+        
+        <div class="kitten">
+            <h2 class="editable">Ginger</h2>
+            <img src="/api/placeholder/400/300" alt="Placeholder image 1 for Ginger">
+            <img src="/api/placeholder/400/300" alt="Placeholder image 2 for Ginger">
+            <p class="editable">Ginger is a curious 7-week-old orange tabby who loves exploring.</p>
+        </div>
+        
+        <div class="kitten">
+            <h2 class="editable">Oreo</h2>
+            <img src="/api/placeholder/400/300" alt="Placeholder image 1 for Oreo">
+            <img src="/api/placeholder/400/300" alt="Placeholder image 2 for Oreo">
+            <p class="editable">Oreo is a friendly 10-week-old black and white kitten who enjoys being around people.</p>
+        </div>
+    </div>
+    
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p class="editable">If you're interested in adopting one of our kittens, please call or text: (555) 123-4567</p>
+        <p class="editable">Email: kittens@example.com</p>
+    </div>
+
+    <script>
+        document.querySelectorAll('.editable').forEach(element => {
+            element.contentEditable = true;
+            element.addEventListener('blur', function() {
+                if (this.innerHTML.trim() === '') {
+                    this.innerHTML = 'Click to edit';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
